@@ -1,0 +1,11 @@
+# Python deps for the xlsx skill. Installed at runtime by the host's
+# auto-ensure (ADR-0034 scope-A) — do NOT `pip install` by hand in docs.
+#
+# openpyxl / pandas are typically already provided by the host runtime; they
+# are listed so the skill is self-describing and works off-host too.
+# `formulas` is the one that is usually NOT baked: recalc_fallback.py needs it
+# to statically detect #DIV/0!/#VALUE!/#REF! before delivery (without it, the
+# fallback still sets fullCalcOnLoad but skips the error scan).
+openpyxl>=3.1
+pandas>=2.0
+formulas>=1.2
