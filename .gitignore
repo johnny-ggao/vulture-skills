@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Scratch / working dirs (never committed)
+.scratch/
+
+# OS
+.DS_Store
