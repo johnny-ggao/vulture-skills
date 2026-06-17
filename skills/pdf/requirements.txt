@@ -1,0 +1,19 @@
+# Python deps for the pdf skill. Installed at runtime by the host's auto-ensure
+# (ADR-0034 scope-A) — do NOT `pip install` by hand in docs.
+#
+# All pure-Python wheels, no system tools:
+#   - pypdf        : read/merge/split/forms (used by the bundled scripts)
+#   - pdfplumber   : text + table extraction
+#   - reportlab    : PDF creation
+#   - Pillow       : image handling (validation images, page rasters)
+#   - pypdfium2    : page -> image rendering (PDFium; replaces pdf2image+Poppler)
+#
+# NOT listed on purpose:
+#   - pdf2image    : needs the Poppler system binaries, absent on the host.
+#   - pymupdf/fitz : AGPL-3.0; opt-in only (see SKILL.md license disclosure rule),
+#                    not bundled so it is never pulled in implicitly.
+pypdf>=4.0
+pdfplumber>=0.11
+reportlab>=4.0
+Pillow>=10.0
+pypdfium2>=4.30
